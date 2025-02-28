@@ -1,9 +1,17 @@
 <h1>My lists</h1>
 
-<ul>
+
+
+<div class="container">
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list)%></li>
+    <div class="card mb-3" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= list.name %></h5>
+        <%= link_to "View list", list_path(list),class: "btn btn-primary"%>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <%= link_to "Create a new list", new_list_path, class: "btn btn-primary mt-3" %>
